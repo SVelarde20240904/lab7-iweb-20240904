@@ -20,14 +20,16 @@ public abstract class BaseDao { // TODO 2a: convertir en clase abstracta
             Class.forName("com.mysql.cj.jdbc.Driver");
         }   catch (ClassNotFoundException ex){
             ex.printStackTrace();
+            throw new UnsupportedOperationException("getConnection() aún no implementado");
         }
 
         String URL = "jdbc:mysql://localhost:3306/telecom_andina";
         String USER = "root";
         String PASS = "12345678"; // cambiar por la contraseña de su MySQL
 
+
         return DriverManager.getConnection(URL, USER, PASS);
 
-        throw new UnsupportedOperationException("getConnection() aún no implementado");
+
     }
 }

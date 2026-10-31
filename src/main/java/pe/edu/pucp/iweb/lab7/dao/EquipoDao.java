@@ -22,7 +22,9 @@ public class EquipoDao extends BaseDao { // TODO 2a: debe heredar de BaseDao
 
         try (Connection conn = this.getConnection();
                 Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT * from sede s ORDER BY s.idSede")
+             ResultSet rs = stmt.executeQuery("SELECT * from sede s; ORDER BY s.idSede;");) {
+
+        }
              // TODO 2c
 
 

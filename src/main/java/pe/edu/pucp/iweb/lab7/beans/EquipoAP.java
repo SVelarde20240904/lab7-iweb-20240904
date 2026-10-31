@@ -8,5 +8,10 @@ package pe.edu.pucp.iweb.lab7.beans;
 public class EquipoAP { // TODO 2b: debe heredar de EquipoRed
 
     // TODO 2b: implementar calcularSoporteMensual()
+    public double calcularSoporteMensual(double precio, int cantidad){
 
+        double soporte = (0.02*precio+5)*cantidad;
+
+        return soporte;
+    }
 }

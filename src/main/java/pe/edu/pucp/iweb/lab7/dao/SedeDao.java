@@ -1,10 +1,13 @@
 package pe.edu.pucp.iweb.lab7.dao;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import pe.edu.pucp.iweb.lab7.beans.Sede;
 
-public class SedeDao { // TODO 2a: debe heredar de BaseDao
+public class SedeDao extends BaseDao { // TODO 2a: debe heredar de BaseDao
 
     /**
      * Ejercicio 2c: retorna todas las sedes ordenadas por nombre.
@@ -12,8 +15,15 @@ public class SedeDao { // TODO 2a: debe heredar de BaseDao
     public ArrayList<Sede> listar() {
         ArrayList<Sede> lista = new ArrayList<>();
         // TODO 2c
+
+        try (Connection conn = this.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * from sede s ORDER BY s.nombre")
+
         return lista;
     }
+
+
 
     /**
      * Apoyo para el Ejercicio 4: retorna la sede con el id indicado,
